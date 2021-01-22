@@ -43,5 +43,5 @@ yarn-debug.log*
 
 /node_modules
 
-.localhost.crt
-.localhost.key
+localhost.crt
+localhost.key
