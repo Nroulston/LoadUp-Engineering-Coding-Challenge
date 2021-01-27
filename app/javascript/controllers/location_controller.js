@@ -1,27 +1,23 @@
-import { Controller } from "stimulus"
+import { Controller } from "stimulus";
+import axios from 'axios'
 
 export default class extends Controller {
   static targets = [ "output" ]
-  
+
   click() {
-    navigator.geolocation.getCurrentPosition(this.success)
+     navigator.geolocation.getCurrentPosition(this.success)
+    
   }
   
-  success(position) {
-   console.log(position.coords.latitude)
-   console.log(position.coords.longitude)
-   fetch(`https://api.weather.gov/points/${position.coords.latitude},${position.coords.longitude}`)
-      .then(response => response.json())
-      .then(data => {
-        fetch(`https://api.weather.gov/gridpoints/${data.properties.gridId}/${data.properties.gridX},${data.properties.gridY}/forecast`)
-          .then(response => {
-             
-           })
-          
-      })
-          
+  async success(position) {
+   
+   let response = await fetch(`https://api.weather.gov/points/${position.coords.latitude},${position.coords.longitude}`)
+   let data = await response.json()   
 
-    
+   let weather_response = await fetch(`https://api.weather.gov/gridpoints/${data.properties.gridId}/${data.properties.gridX},${data.properties.gridY}/forecast`)
+   let forecast = await weather_response.json()
+   debugger
+   
   }
 
   
