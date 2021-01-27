@@ -18,6 +18,7 @@ export default class extends Controller {
    let forecast_response = await weather_response.json()
    let forecast_periods = forecast_response.properties.periods 
    const forecast = await axios("/weather", {params: { forecast_periods } })
+   
    debugger
   }
 
