@@ -43,8 +43,6 @@ yarn-debug.log*
 
 /node_modules
 
-server.crt
-localhost.key
-server.key
-./etc/hosts.config
-server.csr
+
+
+

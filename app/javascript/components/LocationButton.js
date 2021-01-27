@@ -4,14 +4,14 @@ import PropTypes from "prop-types"
 //   render () {
 //     return (
 //       <React.Fragment>
-
+//          <button data-action='click->location#click'>Current Weather</button>
 //       </React.Fragment>
 //     );
 //   }
 // }
 
 
-//export default LocationButton
+// export default LocationButton
 
 
 export default function LocationButton(){

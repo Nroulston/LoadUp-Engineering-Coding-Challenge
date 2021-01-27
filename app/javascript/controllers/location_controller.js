@@ -9,5 +9,6 @@ export default class extends Controller {
 
   success(position) {
     console.log(position.coords.latitude)
+    console.log(position.coords.longitude)
   }
 }
