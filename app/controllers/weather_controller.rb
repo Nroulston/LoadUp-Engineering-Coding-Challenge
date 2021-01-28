@@ -1,7 +1,7 @@
 class WeatherController < ApplicationController
   def weather
     
-    @forecast_periods = (params[:forecast_periods].map{|forecast| JSON.parse(forecast)})
+    @forecast = JSON.parse(params[:data])
     render "weather"
   end
 end

@@ -1,4 +1,13 @@
 <div class="row">
 
-<%= render partial: "weather", collection: @forecast_periods, as: :period %>
+    <div class="card">
+    <ul>
+      <li><%= @forecast['name']%></li>
+      <li><%= @forecast['weather'][0]['description'] %></li>
+      <li>Current Temperature in Kelvin: <%= @forecast["main"]["temp"] %></li>
+      <li>High Temperature in Kelvin: <%= @forecast["main"]["temp_max"] %></li>
+      <li>Low Temperature in Kelvin: <%= @forecast["main"]["temp_min"] %></li>
+    </ul>
+    </div>
+  </div>
 </div>
