@@ -6,6 +6,7 @@ export default class extends Controller {
 
   click() {
     navigator.geolocation.getCurrentPosition(async position => {
+      
       let response = await fetch(`https://api.weather.gov/points/${position.coords.latitude},${position.coords.longitude}`)
       let data = await response.json()   
 
